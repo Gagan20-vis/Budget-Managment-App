@@ -36,7 +36,7 @@ export const reducer = (state, action) => {
 const initialState = {
     TotalBudget: 2000,
     SpendBudget: 960,
-    mode: 'light',
+    mode: localStorage.getItem('mode') || 'light',
     Expenses: [
         { id: uuidv4(), name: 'Shopping', cost: 50 },
         { id: uuidv4(), name: 'Holiday', cost: 300 },

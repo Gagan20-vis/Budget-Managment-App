@@ -16,11 +16,12 @@ export default function Header() {
             type: 'Change_Mode',
             payload: mode === 'light' ? 'dark' : 'light'
         })
+        localStorage.setItem("mode", mode === 'light' ? 'dark' : 'light');
     }
     return (
-        <div className="row d-flex">
-            <div className="col"><h1>My Budget Planner</h1></div>
-            <div className="col-sm-8">
+        <div className="d-flex justify-content-between align-item-center">
+            <div ><h1>My Budget Planner</h1></div>
+            <div >
                 {mode==='light'?(<FaRegMoon style={style} onClick={handleMode} />):<IoSunnyOutline style={style} onClick={handleMode}/>}
             </div>
         </div>

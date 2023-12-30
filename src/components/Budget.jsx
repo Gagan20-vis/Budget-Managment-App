@@ -23,10 +23,10 @@ export default function Budget() {
                         {isEdit ? (<EditTotalBudget handleSaveClick={handleSaveClick} />) : (<ViewTotalBudget handleEditClick={handleEditClick} TotalBudget={TotalBudget} />)}
                     </div>
                     <div className="col mx-5 my-2 d-flex flex-column justify-content-center" style={{ backgroundColor: 'var(--bs-success-bg-subtle)',border:'5px solid var(--bs-success-border-subtle)', borderRadius:'50px' }}>
-                        <div className="py-3">Remaining: {TotalBudget - SpendBudget} &#8377;</div>
+                        <div className="py-3">Remaining: <span style={{fontWeight:"bold"}}>{TotalBudget - SpendBudget} &#8377;</span></div>
                     </div>
-                    <div className="col mx-5 my-2 d-flex flex-column justify-content-center" style={{ backgroundColor: 'var(--bs-primary-bg-subtle)', borderRadius:'50px' }}>
-                        <div className="py-3">Spent so far: {SpendBudget} &#8377;</div>
+                    <div className="col mx-5 my-2 d-flex flex-column justify-content-center" style={{ backgroundColor: 'var(--bs-primary-bg-subtle)', border:'5px solid var(--bs-primary-border-subtle)',borderRadius:'50px' }}>
+                        <div className="py-3">Spent so far: <span style={{fontWeight:"bold"}}>{SpendBudget} &#8377;</span></div>
                     </div>
                 </div>
             </div>

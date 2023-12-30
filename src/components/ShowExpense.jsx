@@ -6,7 +6,6 @@ export default function ShowExpense() {
     const context = useContext(BudgetContext);
     const { Expenses } = context;
     const [filteredExpenses, setFilteredExpenses] = useState(Expenses || []);
-
     useEffect(() => {
         setFilteredExpenses(Expenses);
     }, [Expenses])

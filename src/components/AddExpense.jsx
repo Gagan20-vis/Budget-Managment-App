@@ -5,7 +5,6 @@ import { v4 as uuid4 } from 'uuid';
 export default function AddExpense() {
     const context = useContext(BudgetContext);
     const { TotalBudget,SpendBudget,mode,dispatch } = context;
-    const [Expense, setExpense] = useState({ name: '', cost: '' });
     const [name,setName] = useState('');
     const [cost,setCost] = useState('');
     const onSave = (event) => {
@@ -18,7 +17,7 @@ export default function AddExpense() {
             });
             return;
         }
-        if (Expense.cost > (TotalBudget - SpendBudget)) {
+        if (cost > (TotalBudget - SpendBudget)) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
@@ -37,13 +36,12 @@ export default function AddExpense() {
         })
         setName('');
         setCost('');
-        
     }   
     document.body.style.background = mode==='dark' ? '#2D4356' : 'white';
     document.body.style.color = mode==='dark' ? 'white' : 'black';
     document.body.style.transition = 'background-color .4s ease-out 0s'
     return (
-        <div className='container mt-4'>
+        <div className='container mt-4 p-3' style={{border: '1px solid grey',borderRadius:'8px'}}>
             <h3>Add Expense</h3>
             <form onSubmit={onSave}>
                 <div className='row'>
